@@ -1,5 +1,5 @@
 import Amplify from 'aws-amplify';
-import config from './aws-exports';
+import config from './aws-exports.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
