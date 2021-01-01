@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "quizappbackendd52fa90f": {}
+        "quizappbackendd52fa90f": {},
+        "userPoolGroups": {}
       }
     }
   }

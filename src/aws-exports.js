@@ -8,7 +8,7 @@ const awsmobile = {
     "aws_user_pools_id": "us-west-2_6SaiVdvp4",
     "aws_user_pools_web_client_id": "1hu2los67tvdqte14g732ivbnb",
     "oauth": {
-        "domain": "quizappbackend0f6ea612-0f6ea612-staging.auth.us-west-2.amazoncognito.com",
+        "domain": "quizappbackend70670ccd-70670ccd-staging.auth.us-west-2.amazoncognito.com",
         "scope": [
             "phone",
             "email",
@@ -16,7 +16,7 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://main.d15j75xr0vp6ds.amplifyapp.com/",
+        "redirectSignIn": "https://www.cloudbrevity.com/",
         "redirectSignOut": "https://www.cloudbrevity.com/",
         "responseType": "code"
     },

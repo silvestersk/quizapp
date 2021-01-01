@@ -1,6 +1,6 @@
 {
     "identityPoolName": "quizappbackendd52fa90f_identitypool_d52fa90f",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "quizapd52fa90f",
     "userPoolName": "quizappbackendd52fa90f_userpool_d52fa90f",
     "autoVerifiedAttributes": [
@@ -13,7 +13,7 @@
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
-    "emailVerificationMessage": "Your verification code {####}",
+    "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
@@ -45,21 +45,25 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
+    "useDefault": "defaultSocial",
     "userPoolGroupList": [
         "quizlearn"
     ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "dependsOn": [],
-    "hostedUI": false,
-    "thirdPartyAuth": true,
-    "authProviders": [],
+    "hostedUI": true,
     "userPoolGroups": true,
     "adminQueries": false,
     "triggers": "{}",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
-    "permissions": []
+    "permissions": [],
+    "hostedUIDomainName": "quizappbackend70670ccd-70670ccd",
+    "authProvidersUserPool": [
+        "LoginWithAmazon"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"LoginWithAmazon\",\"authorize_scopes\":\"profile profile:user_id\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"user_id\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.cloudbrevity.com/\"],\"LogoutURLs\":[\"https://www.cloudbrevity.com/\"]}"
 }
