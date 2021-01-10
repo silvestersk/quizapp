@@ -5,6 +5,12 @@ import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 
+import Sidebar from './components/Sidebar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Johanna from './pages/Johanna';
+import { Sahana, SahanaMaths, SahanaEnglish, SahanaScience } from './pages/Sahana';
+import signout from './pages/Signout';
+
 
 const initialFormState = { name: '', description: '' }
 
@@ -35,32 +41,18 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <h1>My Notes App</h1>
-      <input
-        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
-        value={formData.name}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
-        value={formData.description}
-      />
-      <button onClick={createNote}>Create Note</button>
-      <div style={{marginBottom: 30}}>
-        {
-          notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
-            </div>
-          ))
-        }
-      </div>
-      <AmplifySignOut />
-    </div>
+  <Router>
+      <Sidebar />
+      <Switch>
+        <Route path='/Johanna' exact component={Johanna} />
+        <Route path='/Sahana' exact component={Sahana} />
+        <Route path='/Sahana/Maths' exact component={SahanaMaths} />
+        <Route path='/reports/reports2' exact component={SahanaScience} />
+        <Route path='/reports/reports3' exact component={SahanaEnglish} />
+        <Route path='/signout' exact component={signout} />
+      </Switch>
+   </Router>
+    
   );
 }
 
